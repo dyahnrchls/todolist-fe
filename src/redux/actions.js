@@ -1,6 +1,6 @@
 // actions.js
 import axios from "axios";
-import { API_LOCAL } from "../environment";
+import { API_PROD } from "../environment";
 
 export const FETCH_TODOS_REQUEST = "FETCH_TODOS_REQUEST";
 export const FETCH_TODOS_SUCCESS = "FETCH_TODOS_SUCCESS";
@@ -24,7 +24,7 @@ export const fetchApiTodos = (params) => {
   return (dispatch) => {
     dispatch(fetchTodosRequest());
     axios
-      .get(`${API_LOCAL}/todos`, { params })
+      .get(`${API_PROD}/todos`, { params })
       .then((response) => {
         console.log({ response });
         dispatch(fetchTodosSuccess(response.data));
@@ -57,7 +57,7 @@ export const addApiTodos = (body) => {
   return (dispatch) => {
     dispatch(addTodosRequest());
     axios
-      .post(`${API_LOCAL}/todo`, body)
+      .post(`${API_PROD}/todo`, body)
       .then((response) => {
         dispatch(addTodosSuccess(response.data));
       })
@@ -89,7 +89,7 @@ export const updateApiTodos = (id, body) => {
   return (dispatch) => {
     dispatch(updateTodosRequest());
     axios
-      .put(`${API_LOCAL}/todo/${id}`, body)
+      .put(`${API_PROD}/todo/${id}`, body)
       .then((response) => {
         dispatch(updateTodosSuccess(response.data));
       })
@@ -121,7 +121,7 @@ export const deleteApiTodos = (id, body) => {
   return (dispatch) => {
     dispatch(deleteTodosRequest());
     axios
-      .delete(`${API_LOCAL}/todo/${id}`)
+      .delete(`${API_PROD}/todo/${id}`)
       .then((response) => {
         dispatch(deleteTodosSuccess(response.data));
       })
