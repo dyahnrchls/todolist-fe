@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Dokumentasi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Repositori ini adalah frontend aplikasi manajemen tugas (to-do list) yang dibangun dengan menggunakan React, Framer Motion, Axios, dan Redux. Aplikasi ini memungkinkan pengguna untuk menambah, menampilkan, mengubah, dan menghapus tugas dengan status "active" atau "completed."
 
-## Available Scripts
+## Daftar Isi
 
-In the project directory, you can run:
+- [Instalasi](#instalasi)
+- [Menjalankan Aplikasi](#menjalankan-aplikasi)
+- [Fitur](#fitur)
+  - [Menambahkan Todo](#menambahkan-todo)
+  - [Menampilkan Todo](#menampilkan-todo)
+  - [Merubah Nama atau Status Todo](#merubah-nama-atau-status-todo)
+  - [Menghapus Todo](#menghapus-todo)
+- [Pustaka yang Digunakan](#pustaka-yang-digunakan)
+- [Contoh Penggunaan Redux](#contoh-penggunaan-redux)
+- [Lisensi](#lisensi)
 
-### `npm start`
+## Instalasi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone repositori ini:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/dyahnrchls/todolist-fe.git
+   ```
 
-### `npm test`
+2. Masuk ke direktori repositori:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   cd todolist-fe
+   ```
 
-### `npm run build`
+3. Install dependensi:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Menjalankan Aplikasi
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Untuk menjalankan aplikasi, gunakan perintah berikut:
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Aplikasi akan berjalan di `http://localhost:3000` secara default. Anda dapat mengubah port dalam file konfigurasi jika diperlukan.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Fitur
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Menambahkan Todo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Deskripsi:** Pengguna dapat menambahkan tugas baru ke dalam daftar to-do.
 
-## Learn More
+1. Masukkan nama tugas yang ingin ditambahkan.
+2. Pilih status tugas (active atau completed).
+3. Klik tombol "Tambah Todo."
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Menampilkan Todo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Deskripsi:** Pengguna dapat menampilkan tugas berdasarkan status "active," "completed," atau menampilkan semua tugas.
 
-### Code Splitting
+1. Pilih opsi "Active" untuk menampilkan tugas dengan status "active."
+2. Pilih opsi "Completed" untuk menampilkan tugas dengan status "completed."
+3. Pilih opsi "All" untuk menampilkan semua tugas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Merubah Nama atau Status Todo
 
-### Analyzing the Bundle Size
+**Deskripsi:** Pengguna dapat mengubah nama atau status tugas yang sudah ada.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Klik tugas yang ingin diubah.
+2. Edit nama tugas atau ubah status.
+3. Klik tombol "Simpan Perubahan."
 
-### Making a Progressive Web App
+### Menghapus Todo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Deskripsi:** Pengguna dapat menghapus tugas yang sudah ada.
 
-### Advanced Configuration
+1. Klik ikon "Hapus" pada tugas yang ingin dihapus.
+2. Konfirmasi penghapusan.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Pustaka yang Digunakan
 
-### Deployment
+Aplikasi ini memanfaatkan beberapa pustaka JavaScript yang penting, termasuk:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- React: [https://reactjs.org/](https://reactjs.org/)
+- Redux: [https://redux.js.org/](https://redux.js.org/)
+- Framer Motion: [https://www.framer.com/motion/](https://www.framer.com/motion/)
+- Axios: [https://axios-http.com/](https://axios-http.com/)
 
-### `npm run build` fails to minify
+## Contoh Penggunaan Redux
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Aplikasi ini menggunakan Redux untuk mengelola status tugas dan menyimpan daftar to-do. Berikut adalah contoh penggunaan Redux dalam aplikasi:
+
+```javascript
+// Menambahkan Todo
+dispatch(addApiTodos({ name: "Membuat presentasi", status: "active" }));
+
+// Mengubah Nama/Status Todo
+dispatch(updateApiTodos(todoId, { name: "Membuat presentasi", status: "active" }));
+
+// Menghapus Todo
+dispatch(deleteTdeleteApiTodosodo(todoId));
+```
+
+## Lisensi
+
+Dokumentasi ini dilisensikan di bawah [Lisensi MIT](LICENSE.md).
