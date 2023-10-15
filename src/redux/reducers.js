@@ -20,6 +20,7 @@ const initialState = {
   dataAddTodo: null,
   dataUpdateTodo: null,
   dataDeleteTodo: null,
+  refreshData: false,
   loading: false,
   loadingAddTodo: false,
   loadingUpdateTodo: false,
@@ -27,7 +28,7 @@ const initialState = {
   error: null,
   errorAddTodo: null,
   errorUpdateTodo: null,
-  errorDeleteTodo: null
+  errorDeleteTodo: null,
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -44,6 +45,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         data: action.payload.data,
         loading: false,
+        refreshData: false,
       };
     case FETCH_TODOS_FAILURE:
       return {
@@ -63,6 +65,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         dataAddTodo: action.payload,
         loadingAddTodo: false,
+        refreshData: true,
       };
     case ADD_TODOS_FAILURE:
       return {
@@ -82,6 +85,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         dataUpdateTodo: action.payload,
         loadingUpdateTodo: false,
+        refreshData: true,
       };
     case UPDATE_TODOS_FAILURE:
       return {
@@ -101,6 +105,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         dataDeleteTodo: action.payload,
         loadingDeleteTodo: false,
+        refreshData: true,
       };
     case DELETE_TODOS_FAILURE:
       return {

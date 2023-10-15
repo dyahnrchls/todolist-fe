@@ -37,6 +37,14 @@ const DisplayTodos = (props) => {
     getTodos();
   }, [getTodos]);
 
+  useEffect(() => {
+    if (props.todos?.refreshData) {
+      let params = {};
+      if (sort !== "all") params = { status: sort };
+      props.getTodos(params);
+    }
+  }, [props.todos?.refreshData]);
+
   return (
     <div className="displaytodos">
       <div className="buttons">
