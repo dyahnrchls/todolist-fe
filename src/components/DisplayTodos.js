@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { completeTodos } from "../redux/reducer";
 import TodoItem from "./TodoItem";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -19,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     removeTodo: (id) => dispatch(deleteApiTodos(id)),
     updateTodo: (id, body) => dispatch(updateApiTodos(id, body)),
-    completeTodo: (id) => dispatch(completeTodos(id)),
     getTodos: (params) => dispatch(fetchApiTodos(params)),
   };
 };

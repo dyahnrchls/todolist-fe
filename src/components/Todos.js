@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { addTodos } from "../redux/reducer";
-import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
 import { addApiTodos } from "../redux/actions";
 
